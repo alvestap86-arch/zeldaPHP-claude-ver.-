@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tablero {
+    width: 256px;
+    height: 256px;
+    display: grid;
+    grid-template-columns: repeat(16, 16px);
+}
+
+.tile {
+    width: 16px;
+    height: 16px;
+    background-image: url('../sprites/tileset.png');
+    background-position:
+        calc(-44px - 17px * (var(--c) - 1))
+        calc(-1px  - 17px * (var(--f) - 1));
+    image-rendering: pixelated;
+}
+
+.tile-puente        { --c: 1; --f: 1; }   /* a1 */
+.tile-agua-s-i-1    { --c: 1; --f: 2; }   /* a2 */
+.tile-agua-m-i      { --c: 1; --f: 3; }   /* a3 */
+.tile-agua-i-i-1    { --c: 1; --f: 4; }   /* a4 */
+.tile-agua-s-i-2    { --c: 1; --f: 5; }   /* a5 */
+.tile-montana1-s-i  { --c: 1; --f: 6; }   /* a6 */
+.tile-montana1-i-i  { --c: 1; --f: 7; }   /* a7 */
+.tile-polvo         { --c: 1; --f: 8; }   /* a8 */
+.tile-escalera1     { --c: 2; --f: 1; }   /* b1 */
+.tile-agua-s-m      { --c: 2; --f: 2; }   /* b2 */
+.tile-agua          { --c: 2; --f: 3; }   /* b3 */
+.tile-agua-i-m      { --c: 2; --f: 4; }   /* b4 */
+.tile-agua-s-d-2    { --c: 2; --f: 5; }   /* b5 */
+.tile-montana1-s-m  { --c: 2; --f: 6; }   /* b6 */
+.tile-montana1      { --c: 2; --f: 7; }   /* b7 */
+.tile-puente2       { --c: 2; --f: 8; }   /* b8 */
+.tile-escalera2     { --c: 3; --f: 1; }   /* c1 */
+.tile-agua-s-d-1    { --c: 3; --f: 2; }   /* c2 */
+.tile-agua-m-d      { --c: 3; --f: 3; }   /* c3 */
+.tile-agua-i-d-1    { --c: 3; --f: 4; }   /* c4 */
+.tile-agua-i-i-2    { --c: 3; --f: 5; }   /* c5 */
+.tile-montana1-s-d  { --c: 3; --f: 6; }   /* c6 */
+.tile-montana1-i-d  { --c: 3; --f: 7; }   /* c7 */
+.tile-roca3         { --c: 3; --f: 8; }   /* c8 */
+.tile-suelo1        { --c: 4; --f: 1; }   /* d1 */
+.tile-montana2-s-i  { --c: 4; --f: 2; }   /* d2 */
+.tile-montana2-i-i  { --c: 4; --f: 3; }   /* d3 */
+.tile-roca2         { --c: 4; --f: 4; }   /* d4 */
+.tile-agua-i-d-2    { --c: 4; --f: 5; }   /* d5 */
+.tile-roca1         { --c: 4; --f: 6; }   /* d6 */
+.tile-montana3-s-i  { --c: 4; --f: 7; }   /* d7 */
+.tile-montana3-i-i  { --c: 4; --f: 8; }   /* d8 */
+.tile-suelo2        { --c: 5; --f: 1; }   /* e1 */
+.tile-montana2-s-m  { --c: 5; --f: 2; }   /* e2 */
+.tile-montana2      { --c: 5; --f: 3; }   /* e3 */
+.tile-arbusto1      { --c: 5; --f: 4; }   /* e4 */
+.tile-arbusto2      { --c: 5; --f: 5; }   /* e5 */
+.tile-arbusto3      { --c: 5; --f: 6; }   /* e6 */
+.tile-montana3-s-m  { --c: 5; --f: 7; }   /* e7 */
+.tile-montana3      { --c: 5; --f: 8; }   /* e8 */
+.tile-suelo3        { --c: 6; --f: 1; }   /* f1 */
+.tile-montana2-s-d  { --c: 6; --f: 2; }   /* f2 */
+.tile-montana2-i-d  { --c: 6; --f: 3; }   /* f3 */
+.tile-armos         { --c: 6; --f: 4; }   /* f4 */
+.tile-lapida        { --c: 6; --f: 5; }   /* f5 */
+.tile-cesped        { --c: 6; --f: 6; }   /* f6 */
+.tile-montana3-s-d  { --c: 6; --f: 7; }   /* f7 */
+.tile-montana3-i-d  { --c: 6; --f: 8; }   /* f8 */
+
+.tile-montana2-s-m,
+.tile-montana2-s-d,
+.tile-montana2-i-i,
+.tile-montana2-i-d,
+.tile-montana1-s-m,
+.tile-montana1-s-d,
+.tile-montana1-i-i,
+.tile-montana1-i-d,
+.tile-montana3-s-m,
+.tile-montana3-s-d,
+.tile-montana3-i-i,
+.tile-montana3-i-d,
+.tile-agua-s-m,
+.tile-agua-s-d-1,
+.tile-agua-s-d-2,
+.tile-agua-s-i-1,
+.tile-agua-s-i-2,
+.tile-agua-i-m,
+.tile-agua-i-i-1,
+.tile-agua-i-i-2,
+.tile-agua-i-d-1,
+.tile-agua-i-d-2,
+.tile-roca1,
+.tile-roca2,
+.tile-roca3,
+.tile-lapida,
+.tile-armos,
+.tile-arbusto1,
+.tile-arbusto2,
+.tile-arbusto3 {
+    background-image:
+        url('../sprites/tileset.png'),
+        url('../sprites/tileset.png');
+    background-position:
+        calc(-44px - 17px * (var(--c) - 1))
+        calc(-1px  - 17px * (var(--f) - 1)),
+        -95px -1px;   /* capa inferior: suelo d1 */
+}
